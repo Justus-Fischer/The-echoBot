@@ -1,13 +1,34 @@
 import random
 
+def kor(tex):
+    taul = {
+        "bin" : "bist",
+        "mich" : "dich",
+        "mir" : "dir",
+        "ich" : "du",
+        "fühle" : "fühlst",
+        "fuehle" : "fühlst"
+    }
+    sen = ["weil"]
+    wo = tex.split() # .lower()?
+    erg = [taul.get(w, w) for w in wo if w not in sen]
+    return " ".join(erg)
+
+
 print("Wie geht es dir?")
 while True:
     
-    st = input()
+    st = str(input())
     try:
         strr = st.split() [-1]
-        if "fühle" in st or "fuehle" in st or "bin" in st:
-            print("Wieso bist du " + strr +"?")
+        if "fühle" in st or "fuehle" in st:
+            stre = st.split("fühle") [-1].strip()
+            print("Warum fühlst du " + kor(stre) + "?")
+            
+        elif "bin" in st:
+            stre = st.split("ich bin") [-1].strip()
+            print("Warum bist du " + kor(stre) + "?")
+            
         else:
             we = random.randint(0, 4)
         
