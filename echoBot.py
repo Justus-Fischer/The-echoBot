@@ -14,7 +14,7 @@ def kor(tex):
     erg = [taul.get(w, w) for w in wo if w not in sen]
     return " ".join(erg)
 
-
+print("Hallo ich bin Echo")
 print("Wie geht es dir?")
 while True:
     
@@ -22,12 +22,21 @@ while True:
     try:
         strr = st.split() [-1]
         if "fühle" in st or "fuehle" in st:
-            stre = st.split("fühle") [-1].strip()
-            print("Warum fühlst du " + kor(stre) + "?")
-            
+            if "weil" in st:
+                tre = st.split("fühle") [0].strip()
+                print("Warum fühlst " + kor(tre) + "?")
+            else:
+                stre = st.split("fühle") [-1].strip()
+                print("Warum fühlst du " + kor(stre) + "?")
+        
+        
         elif "bin" in st:
-            stre = st.split("ich bin") [-1].strip()
-            print("Warum bist du " + kor(stre) + "?")
+            if "weil" in st:
+                tre = st.split("bin") [0].strip()
+                print("Warum bist du " + kor(tre) + "?")
+            else:
+                stre = st.split("bin") [-1].strip()
+                print("Warum bist du " + kor(stre) + "?")
             
         else:
             we = random.randint(0, 4)
