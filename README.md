@@ -14,3 +14,6 @@ is the file which only contains the English version
 
 
 If in doubt, the main file (echoBot) is the most current version for both languages.
+
+
+Copyright (c) 2026 Justus Fischer
