@@ -1,4 +1,4 @@
-About The-echoBot
+About The-echoBot:
 
 A project about creating a small "ChatBot" (with easy methods) which helps to reflect feelings.
 
