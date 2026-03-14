@@ -1,6 +1,6 @@
 import random
 import time
-word = []
+word = ["-"] * 4
 speed = 0
 def gettime(tr):
     tims = (95**len(pas)) / tr
@@ -50,7 +50,48 @@ def bu(num):
         
 
         
+#chplot(index, letter)
+     
         
+def simulate(length):
+    boost = False
+    word_index = [32] * length
+    trysd = 0
+    while True:
+
+        word = [chr(n) for n in word_index]
+        if "".join(word) == pas:
+            return str("True " + str(trysd))
+            break
+        
+        else:
+            trysd = trysd + 1
+            if trysd < 25:
+                print("".join(word))
+            else:
+                if boost == False:
+                    print("Deactivate output to work faster")
+                    boost = True
+        
+        
+        
+        word_index[0] = word_index[0] + 1
+        if word_index[0] == 127:
+            word_index[0] = 128
+        
+        
+        for i in range(length):
+            if word_index[i] > 129:
+                
+                if i == length - 1:
+                    return 
+                word_index[i] = 32
+                word_index[i + 1] = word_index[i + 1] + 1
+                if word_index[i] == 127:
+                    word_index[i] = 128
+                    
+            else:
+                break        
     
     
     
@@ -97,24 +138,17 @@ while True:
 
     if "Y" in input().upper():
         trys = 0
-        fi = False
-        st = time.time()
-        while fi == False:
-            bu(len(pas))
-            if "".join(word) == pas:
-                break
-            else:
-                trys = trys + 1
-                if trys < 500:
-                    print("".join(word))
-                else:
-                    if boost == False:
-                        print("Deactivate output to work faster")
-                        boost = True
-                word = []
         
-        print("Password found after "+ str(f"{trys:,}") +" trys and " + str(time.time() - st) + " seconds or "+ str((time.time()-st)//60) + " minutes.")
-        print("Do you want to test another password? [YES/NO]")
+        st = time.time()
+        while True:
+            zs = simulate(len(pas))
+            if "True" in zs:
+                trys = int(zs[5:])
+                break
+    
+        tg = time.time() - st
+        print("Password found after "+ str(f"{trys:,}") +" trys and " + str(round(tg ,2)) + " seconds or "+ str((time.time()-st)//60) + " minutes.")
+        print("Do you want tao test another password? [YES/NO]")
         if "N" in input().upper():
             break
         
@@ -122,5 +156,6 @@ while True:
         print("Do you want to test another password? [YES/NO]")
         if "N" in input().upper():
             break 
+
 
 
