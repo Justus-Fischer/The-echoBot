@@ -1,7 +1,8 @@
+About The-echoBot
+
 A project about creating a small "ChatBot" (with easy methods) which helps to reflect feelings.
 
-
-The repository contains 3 files:
+The folder contains 3 files:
 
 echoBot: 
 is the main file which contains both languages 
@@ -15,6 +16,13 @@ is the file which only contains the English version
 
 If in doubt, the main file (echoBot) is the most current version for both languages.
 
+About passwordStrength_demo.py:
+
+a small project to show how important long passwords are
+
+(the simulator cheats because he is already knowing the lenght of the password)
+
+Disclaimer: This tool is for educational purpose only. Do not use it for ilegal activities
 
 How to run the code (Linux):
 
