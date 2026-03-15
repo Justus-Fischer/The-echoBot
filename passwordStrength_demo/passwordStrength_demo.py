@@ -62,7 +62,7 @@ def simulate(length):
         word = [chr(n) for n in word_index]
         if "".join(word) == pas:
             return str("True " + str(trysd))
-            break
+            
         
         else:
             trysd = trysd + 1
@@ -106,8 +106,20 @@ while True:
 
 
     pas = input()
+    if speed == 0:
+        le = len(pas)
+    
+    if speed > 0 and ( le != len(pas)):
+        print("The length of your password has changed")
+        print("Would you like to start a new speed test? [YES/NO]")
+        print("(otherwise, the speed is calculated )")
+         
+        
+        if "Y" in input().upper():
+            speed = 0
 
-
+    if speed == 0:
+        le = len(pas)
     
     boost = False
     trys = 0
@@ -124,10 +136,13 @@ while True:
             trys = trys + 1
         trys = trys / 10
         speed = trys
+        speedBL = speed * len(pas)
     else:
         trys = speed
+        
+    
 
-    print("Your computer manages " +str(f"{trys:,}" +" attemps per second. (singlecore)"))
+    print("Your computer manages " +str(f"{speedBL / len(pas):,}" +" attemps per second. (singlecore)"))
     print("At this speed you would need up to " + gettime(trys)  + " to find the password. (singlecore)")
     print("statistically, however, only half the time")
     print(" ")
@@ -148,7 +163,7 @@ while True:
     
         tg = time.time() - st
         print("Password found after "+ str(f"{trys:,}") +" trys and " + str(round(tg ,2)) + " seconds or "+ str((time.time()-st)//60) + " minutes.")
-        print("Do you want tao test another password? [YES/NO]")
+        print("Do you want to test another password? [YES/NO]")
         if "N" in input().upper():
             break
         
