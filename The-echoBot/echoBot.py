@@ -47,19 +47,11 @@ if "DE" in spr:
                 if "gut" in st:
                     print("Super! Was fühlst du sonst noch?")
                     continue
-                    
-                we = random.randint(0, 4)
-        
-                if we == 0:
-                    print("Erzähl mir mehr")
-                elif we == 1:
-                    print("Warum?")
-                elif we == 2:
-                    print("Bist du dir sicher?")
-                elif we == 3:
-                    print("Wieso denkst du das?")
-                else:
-                    print("Wenn du daran denkst - was kommt dir dann noch in den Kopf?")
+                
+                alt = ["Erzähl mir mehr", "Warum?", "Bist du dir sicher?", "Wieso denkst du das?",
+                       "Wenn du daran denkst - was kommt dir dann noch in den Kopf?"]
+                
+                print(random.choice(alt))
                 
         except:
             print("")
