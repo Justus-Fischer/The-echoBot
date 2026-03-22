@@ -39,13 +39,16 @@ def gettime(tr):
         return str(str(round(tims,2)) + " seconds")
     
     
-def bu(num):
+def bu(num, ausg):
+    bword = []
     for i in range(num):
         sp = chr(random.randint(0, 150))
         while not sp.isprintable():
             sp = chr(random.randint(0, 130))
     
-        word.append(sp)
+        bword.append(sp)
+    if ausg == 1:    
+        print(" ".join(bword))
         
         
 
@@ -67,7 +70,9 @@ def simulate(length):
         else:
             trysd = trysd + 1
             if trysd < 25:
-                print("".join(word))
+                #print("".join(word))
+                bu(length,1)
+                
             else:
                 if boost == False:
                     print("Deactivate output to work faster")
@@ -128,7 +133,7 @@ while True:
         print(" ")
         st = time.time()
         while time.time() - st < 10:
-            bu(len(pas))
+            bu(len(pas),0)
             if "".join(word) == "§":
                 print("Unexpected ERROR - please restart")
                 break
