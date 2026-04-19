@@ -10,8 +10,8 @@ def kor(tex):
         "fuehle" : "fühlst",
         "möchte" : "willst",
         "moechte" : "willst",
-        "brauche" : "brauchst";
-        "werde" : "wirst";
+        "brauche" : "brauchst",
+        "werde" : "wirst",
     }
     sen = ["weil"]
     wo = tex.split() # .lower()?
