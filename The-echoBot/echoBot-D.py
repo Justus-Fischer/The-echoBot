@@ -7,7 +7,9 @@ def kor(tex):
         "mir" : "dir",
         "ich" : "du",
         "fühle" : "fühlst",
-        "fuehle" : "fühlst"
+        "fuehle" : "fühlst",
+        "möchte" : "willst",
+        "moechte" : "willst",
     }
     sen = ["weil"]
     wo = tex.split() # .lower()?
@@ -22,12 +24,40 @@ while True:
     try:
         strr = st.split() [-1]
         if "fühle" in st or "fuehle" in st:
-            if "weil" in st:
-                tre = st.split("fühle") [0].strip()
-                print("Warum fühlst " + kor(tre) + "?")
-            else:
-                stre = st.split("fühle") [-1].strip()
-                print("Warum fühlst du " + kor(stre) + "?")
+            if "fühle" in st:
+                if "weil" in st:
+                    tre = st.split("fühle") [0].strip()
+                    print("Warum fühlst " + kor(tre) + "?")
+                else:
+                    stre = st.split("fühle") [-1].strip()
+                    print("Warum fühlst du " + kor(stre) + "?")
+                    
+            if "fuehle" in st:
+                if "weil" in st:
+                    tre = st.split("fuehle") [0].strip()
+                    print("Warum fühlst " + kor(tre) + "?")
+                else:
+                    stre = st.split("fuehle") [-1].strip()
+                    print("Warum fühlst du " + kor(stre) + "?")
+                
+                
+                
+        elif "möchte" in st or "moechte" in st:
+            if "möchte" in st:
+                if "weil" in st:
+                    tre = st.split("möchte") [0].strip()
+                    print("Warum willst " + kor(tre) + "?")
+                else:
+                    stre = st.split("möchte") [-1].strip()
+                    print("Warum möchtest du " + kor(stre) + "?")
+                    
+            if "moechte" in st:
+                if "weil" in st:
+                    tre = st.split("moechte") [0].strip()
+                    print("Warum möchtest " + kor(tre) + "?")
+                else:
+                    stre = st.split("fuehle") [-1].strip()
+                    print("Warum möchtest du " + kor(stre) + "?")
         
         
         elif "bin" in st:
