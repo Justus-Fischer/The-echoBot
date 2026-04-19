@@ -10,6 +10,8 @@ def kor(tex):
         "fuehle" : "fühlst",
         "möchte" : "willst",
         "moechte" : "willst",
+        "brauche" : "brauchst";
+        "werde" : "wirst";
     }
     sen = ["weil"]
     wo = tex.split() # .lower()?
@@ -56,7 +58,7 @@ while True:
                     tre = st.split("moechte") [0].strip()
                     print("Warum möchtest " + kor(tre) + "?")
                 else:
-                    stre = st.split("fuehle") [-1].strip()
+                    stre = st.split("moechte") [-1].strip()
                     print("Warum möchtest du " + kor(stre) + "?")
         
         
@@ -67,6 +69,10 @@ while True:
             else:
                 stre = st.split("bin") [-1].strip()
                 print("Warum bist du " + kor(stre) + "?")
+                
+                
+        
+        
             
         else:
             we = random.randint(0, 4)
@@ -81,6 +87,9 @@ while True:
                 print("Wieso denkst du das?")
             else:
                 print("Wenn du daran denkst - was kommt dir dann noch in den Kopf?")
+                
+        
+        
                 
     except:
         print("")
