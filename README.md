@@ -10,6 +10,9 @@ is the main file which contains both languages
 echoBot-D:
 is the file which only contains the German version
 
+echoBot-D-streamlit_edition:
+is the file which only contains the Geraman version and visualises this with the help of streamlit
+
 echoBot-E:
 is the file which only contains the English version
 
