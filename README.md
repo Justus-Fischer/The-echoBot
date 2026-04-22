@@ -36,5 +36,6 @@ replace Name with the name of the program
 
 for example: cd ~/Downloads && python3 echoBot.py
 
+Streamlit uses Apache License 2.0
 
 Copyright (c) 2026 Justus Fischer
