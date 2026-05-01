@@ -1,6 +1,7 @@
 import streamlit as strem
 import random
 
+
 strem.title("The echoBot")
 def kor(tex):
     taul = {
@@ -33,13 +34,17 @@ for message in strem.session_state.messages:
         strem.markdown(message["content"])
     
     #st = str(input())
-        
-if st := strem.chat_input("Start tiping"):
+
+
+    
+if st := strem.chat_input("Beschreibe was du gerade fühlst"):
         
     strem.session_state.messages.append({"role": "user", "content": st})
     with strem.chat_message("user"):
         strem.markdown(st)
+    start = False
             
+
 try:
     strr = st.split() [-1]
     if "fühle" in st or "fuehle" in st:
