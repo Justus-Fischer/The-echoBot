@@ -35,14 +35,12 @@ for message in strem.session_state.messages:
     
     #st = str(input())
 
-
-    
+  
 if st := strem.chat_input("Beschreibe was du gerade fühlst"):
         
     strem.session_state.messages.append({"role": "user", "content": st})
     with strem.chat_message("user"):
         strem.markdown(st)
-    start = False
             
 
 try:
