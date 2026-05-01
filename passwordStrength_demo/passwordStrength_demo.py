@@ -134,6 +134,31 @@ while True:
         st = time.time()
         while time.time() - st < 10:
             
+               
+            word_index = [32] * 5
+            trysd = 0
+            word = [chr(n) for n in word_index]
+
+            trysd = trysd + 1
+
+            word_index[0] = word_index[0] + 1
+            if word_index[0] == 127:
+                word_index[0] = 128
+        
+        
+            for i in range(5):
+                if word_index[i] > 129:
+                
+                   # if i == length - 1:
+                        #return 
+                    word_index[i] = 32
+                    word_index[i + 1] = word_index[i + 1] + 1
+                    if word_index[i] == 127:
+                        word_index[i] = 128
+                    
+                else:
+                    break  
+            
             
             trys = trys + 1
         trys = trys / 10
