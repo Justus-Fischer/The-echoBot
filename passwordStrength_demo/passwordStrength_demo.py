@@ -69,7 +69,7 @@ def simulate(length):
         
         else:
             trysd = trysd + 1
-            if trysd < 25:
+            if trysd < 50:
                 #print("".join(word))
                 bu(length,1)
                 
@@ -133,11 +133,8 @@ while True:
         print(" ")
         st = time.time()
         while time.time() - st < 10:
-            bu(len(pas),0)
-            if "".join(word) == "§":
-                print("Unexpected ERROR - please restart")
-                break
-            word = []
+            
+            
             trys = trys + 1
         trys = trys / 10
         speed = trys
@@ -152,7 +149,7 @@ while True:
     print("statistically, however, only half the time")
     print(" ")
     time.sleep(5)
-    print("But a hacker could find it in " + gettime(100000000000) +".")
+    print("But a hacker could find it in " + gettime(100000000000) +".") 
     print(" ")
     print("Would you like to let your computer try to find the password? [YES/NO]")
 
@@ -168,6 +165,9 @@ while True:
     
         tg = time.time() - st
         print("Password found after "+ str(f"{trys:,}") +" trys and " + str(round(tg ,2)) + " seconds or "+ str((time.time()-st)//60) + " minutes.")
+        
+        print(str(f"{(trys / round(tg ,2)):,}"))
+        
         print("Do you want to test another password? [YES/NO]")
         if "N" in input().upper():
             break
