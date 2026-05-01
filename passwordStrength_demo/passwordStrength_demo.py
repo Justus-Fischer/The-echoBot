@@ -129,16 +129,16 @@ while True:
     boost = False
     trys = 0
     if speed == 0:
-        print("Starting speedtest... (singlecore, duration: 10s)")
+        print("Starting speedtest... (singlecore, duration: up to 10s)")
         print(" ")
+        word_index = [32] * 4
+        trysd = 0
         st = time.time()
-        while time.time() - st < 10:
+        while True:
             
-               
-            word_index = [32] * 5
-            trysd = 0
             word = [chr(n) for n in word_index]
-
+            if "".join(word) == "zzzz":
+                break
             trysd = trysd + 1
 
             word_index[0] = word_index[0] + 1
@@ -146,11 +146,11 @@ while True:
                 word_index[0] = 128
         
         
-            for i in range(5):
+            for i in range(4):
                 if word_index[i] > 129:
                 
-                   # if i == length - 1:
-                        #return 
+                    if i == 4 - 1: #laenge !!!
+                        break
                     word_index[i] = 32
                     word_index[i + 1] = word_index[i + 1] + 1
                     if word_index[i] == 127:
@@ -161,14 +161,15 @@ while True:
             
             
             trys = trys + 1
-        trys = trys / 10
+        print(str(trys) + str(trysd))
+        trys = trys / (time.time() - st)
         speed = trys
         speedBL = speed * len(pas)
     else:
         trys = speed
         
     
-
+    
     print("Your computer manages " +str(f"{speedBL / len(pas):,}" +" attemps per second. (singlecore)"))
     print("At this speed you would need up to " + gettime(trys)  + " to find the password. (singlecore)")
     print("statistically, however, only half the time")
